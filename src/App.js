@@ -12,7 +12,6 @@ function App() {
         setTodoList((currentArray) => [toDo, ...currentArray]);
         setToDo("");
     };
-    console.log(todoList);
     return (
         <div>
             <h1>My To-Do List ({todoList.length})</h1>
@@ -25,6 +24,12 @@ function App() {
                 />
                 <button>Add to the list</button>
             </form>
+            <hr />
+            <ul>
+                {todoList.map((item, index) => (
+                    <li key={index}>{item.toUpperCase()}</li>
+                ))}
+            </ul>
         </div>
     );
 }
