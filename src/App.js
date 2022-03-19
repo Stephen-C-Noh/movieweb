@@ -1,20 +1,30 @@
 import { useState, useEffect } from "react";
 
-function Hello() {
-    useEffect(() => {
-        console.log("created.");
-        return () => console.log("destroyed.");
-    }, []);
-    return <h1>Hello</h1>;
-}
-
 function App() {
-    const [showing, setShowing] = useState(false);
-    const onClick = () => setShowing((prev) => !prev);
+    const [toDo, setToDo] = useState("");
+    const [todoList, setTodoList] = useState([]);
+    const onChange = (event) => setToDo(event.target.value);
+    const onSubmit = (event) => {
+        event.preventDefault();
+        if (toDo === "") {
+            return;
+        }
+        setTodoList((currentArray) => [toDo, ...currentArray]);
+        setToDo("");
+    };
+    console.log(todoList);
     return (
         <div>
-            {showing ? <Hello /> : null}
-            <button onClick={onClick}>{showing ? "Hide" : "Show"}</button>
+            <h1>My To-Do List ({todoList.length})</h1>
+            <form onSubmit={onSubmit}>
+                <input
+                    onChange={onChange}
+                    value={toDo}
+                    type="text"
+                    placeholder="Write your 'To-Do'..."
+                />
+                <button>Add to the list</button>
+            </form>
         </div>
     );
 }
