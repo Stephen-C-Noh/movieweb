@@ -1,13 +1,15 @@
-import Button from "./Button";
-import styles from "./App.module.css";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div>
-      <h1 className={styles.title}>Welcome!!</h1>
-      <Button text={"Continue"}/>
-    </div>
-  );
+    const [counter, setValue] = useState(0);
+    const onClick = () => setValue((prev) => prev + 1);
+    console.log("Called an api.");
+    return (
+        <div>
+            <h1>{counter}</h1>
+            <button onClick={onClick}>Click Me!</button>
+        </div>
+    );
 }
 
 export default App;
