@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Movie_detail from "../components/movie_detail";
+import MovieDetail from "../components/MovieDetail";
 import Header from "../components/Header";
 
 function Detail() {
@@ -24,7 +24,7 @@ function Detail() {
             {loading ? (
                 <h3>Now Loading...</h3>
             ) : (
-                <Movie_detail
+                <MovieDetail
                     title={detail.title}
                     coverImg={detail.large_cover_image}
                     year={detail.year}

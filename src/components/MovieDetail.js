@@ -1,7 +1,6 @@
-import Header from "../components/Header";
 import styles from "../css/Movie_detail.module.css";
 
-function Movie_detail({ title, coverImg, year, description, genres, rate, runtime }) {
+function MovieDetail({ title, coverImg, year, description, genres, rate, runtime }) {
     return (
         <div className={styles.container}>
             <div className={styles.detail__header}>
@@ -41,4 +40,4 @@ function Movie_detail({ title, coverImg, year, description, genres, rate, runtim
     );
 }
 
-export default Movie_detail;
+export default MovieDetail;
