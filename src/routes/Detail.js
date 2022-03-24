@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Movie_detail from "../components/movie_detail";
+import Header from "../components/Header";
 
 function Detail() {
     const { id } = useParams();
@@ -15,11 +17,23 @@ function Detail() {
     useEffect(() => {
         getDetail();
     }, []);
-    console.log(detail);
+
     return (
         <div>
-            <h1>Detail for {detail.title}</h1>
-            {loading ? <h3>Now Loading...</h3> : null}
+            <Header />
+            {loading ? (
+                <h3>Now Loading...</h3>
+            ) : (
+                <Movie_detail
+                    title={detail.title}
+                    coverImg={detail.large_cover_image}
+                    year={detail.year}
+                    description={detail.description_full}
+                    genres={detail.genres}
+                    rate={detail.rating}
+                    runtime={detail.runtime}
+                />
+            )}
         </div>
     );
 }
