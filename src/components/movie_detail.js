@@ -1,5 +1,5 @@
 import Header from "../components/Header";
-import styles from "../css/movie_detail.module.css";
+import styles from "../css/Movie_detail.module.css";
 
 function Movie_detail({ title, coverImg, year, description, genres, rate, runtime }) {
     return (
