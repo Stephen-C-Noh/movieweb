@@ -1,26 +1,19 @@
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Movie from "../components/movie";
 import Header from "../components/Header";
-import styles from "../css/Home.module.css";
+import styles from "../css/Search.module.css";
 
-function Home() {
+function Search() {
+    const { keyword } = useParams();
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
     const getMovies = async () => {
         const json = await (
-            await fetch(`https://yts.mx/api/v2/list_movies.json?sort_by=rating&limit=50`)
+            await fetch(`https://yts.mx/api/v2/list_movies.json?query_term=${keyword}`)
         ).json();
         setMovies(json.data.movies);
         setLoading(false);
-
-        // The following code do the same as code above.
-
-        // const response = await fetch(
-        //     `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.5&sort_by=year`
-        // );
-        // const json = await response.json();
-        // setMovies(json.data.movies);
-        // setLoading(false);
     };
     useEffect(() => {
         getMovies();
@@ -33,7 +26,8 @@ function Home() {
                     <div className={styles.loader}>
                         <span>Loading....</span>
                     </div>
-                ) : (
+                ) : null}
+                {movies ? (
                     <div className={styles.movies}>
                         {movies.map((movie) => (
                             <Movie
@@ -48,9 +42,14 @@ function Home() {
                             />
                         ))}
                     </div>
+                ) : (
+                    <span className={styles.searchError}>
+                        Sorry, There is no match for {keyword}...
+                    </span>
                 )}
             </section>
         </div>
     );
 }
-export default Home;
+
+export default Search;

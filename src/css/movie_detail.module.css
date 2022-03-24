@@ -1,0 +1,56 @@
+.detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+}
+.detail__header {
+    text-align: center;
+}
+
+.detail__img {
+    position: relative;
+    padding: 10px 20px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.detail__title {
+    display: inline-flex;
+}
+.detail__year {
+    display: inline-flex;
+    margin-left: 10px;
+}
+
+.detail__infoName {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+}
+
+.detail__info {
+    font-size: 14px;
+    display: flex;
+}
+
+.detail__text {
+    font-size: 14px;
+    border: none;
+    background-color: transparent;
+    resize: none;
+}
+
+.detail__genres {
+    text-align: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0px;
+}
+.detail__genres li,
+.detail__year {
+    margin-right: 10px;
+    font-size: 14px;
+}
