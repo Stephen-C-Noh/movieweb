@@ -1,4 +1,4 @@
-import styles from "../css/Movie_detail.module.css";
+import styles from "../css/MovieDetail.module.css";
 
 function MovieDetail({ title, coverImg, year, description, genres, rate, runtime }) {
     return (
