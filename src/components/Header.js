@@ -1,5 +1,5 @@
 import styles from "../css/Header.module.css";
-import Search from "../routes/search";
+import Search from "../routes/Search";
 import { ReactComponent as Logo } from "../img/logo.svg";
 import { Navbar, Container, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import { useState } from "react";
