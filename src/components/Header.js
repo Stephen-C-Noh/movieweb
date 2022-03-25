@@ -36,7 +36,7 @@ function Header() {
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href={`/`}>Home</Nav.Link>
-                        <Nav.Link href="#link">Search</Nav.Link>
+                        <Nav.Link href="#link">Genres</Nav.Link>
                     </Nav>
                     <Form className="d-flex" onSubmit={onFormSubmit}>
                         <FormControl
@@ -53,7 +53,7 @@ function Header() {
                                 variant="outline-success"
                                 type="submit"
                             >
-                                Submit
+                                Search
                             </Button>
                         </Link>
                     </Form>
