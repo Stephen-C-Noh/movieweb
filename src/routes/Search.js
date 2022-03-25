@@ -17,7 +17,7 @@ function Search() {
     };
     useEffect(() => {
         getMovies();
-    }, []);
+    }, [keyword]);
     return (
         <div>
             <Header />

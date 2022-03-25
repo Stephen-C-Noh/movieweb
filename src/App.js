@@ -8,7 +8,7 @@ function App() {
     return (
         <Router>
             <Routes basename="/movieweb">
-                <Route path="/" element={<Home />} />
+                <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
                 <Route path="/movie/:id" element={<Detail />} />
                 <Route path="/search/:keyword" element={<Search />} />
             </Routes>

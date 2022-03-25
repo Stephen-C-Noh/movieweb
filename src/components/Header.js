@@ -19,7 +19,7 @@ function Header() {
                 <Navbar.Brand href={"/"}>
                     <Logo width="149px" height="42px" className="d-inline-block align-top" alt="" />
                 </Navbar.Brand>
-                <span className={styles.by}>by</span>
+
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -36,7 +36,7 @@ function Header() {
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link href={`/`}>Home</Nav.Link>
-                        <Nav.Link href="#link">Genres</Nav.Link>
+                        <Nav.Link href="#link">Browse by Genres</Nav.Link>
                     </Nav>
                     <Form className="d-flex" onSubmit={onFormSubmit}>
                         <FormControl
