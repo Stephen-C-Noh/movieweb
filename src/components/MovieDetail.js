@@ -3,15 +3,14 @@ import styles from "../css/MovieDetail.module.css";
 function MovieDetail({ title, coverImg, year, description, genres, rate, runtime }) {
     return (
         <div className={styles.container}>
-            <div className={styles.detail__header}>
-                <h1 className={styles.detail__title}>{title}</h1>
-                <h3 className={styles.detail__year}> ({year})</h3>
-                <hr />
-            </div>
+            <div className={styles.detail__header}></div>
 
             <div className={styles.detail}>
                 <img src={coverImg} alt={title} title={title} className={styles.detail__img} />
                 <div>
+                    <h1 className={styles.detail__title}>{title}</h1>
+                    <h3 className={styles.detail__year}> ({year})</h3>
+                    <hr />
                     <span className={styles.detail__infoName}>Genres</span>
                     <ul className={styles.detail__genres}>
                         {genres.map((g) => (

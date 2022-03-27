@@ -9,14 +9,13 @@ function Header() {
     const [value, setValue] = useState(""),
         onInput = ({ target: { value } }) => setValue(value),
         onFormSubmit = (e) => {
-            console.log(value);
             <Search keyword={value} />;
         };
 
     return (
         <Navbar bg="light" expand="lg" sticky="top">
             <Container>
-                <Navbar.Brand href={"/"}>
+                <Navbar.Brand href={"/movieweb"}>
                     <Logo width="149px" height="42px" className="d-inline-block align-top" alt="" />
                 </Navbar.Brand>
 
@@ -35,7 +34,7 @@ function Header() {
                                 Other Projects on Github
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href={`/`}>Home</Nav.Link>
+                        <Nav.Link href={"/movieweb"}>Home</Nav.Link>
                         <Nav.Link href="#link">Browse by Genres</Nav.Link>
                     </Nav>
                     <Form className="d-flex" onSubmit={onFormSubmit}>

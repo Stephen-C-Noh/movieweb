@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Movie from "../components/Movie";
 import Header from "../components/Header";
 import styles from "../css/Home.module.css";
+import RightPane from "../components/RightPane";
 
 function Home() {
     const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ function Home() {
     return (
         <div>
             <Header />
+            <RightPane />
             <section className={styles.container}>
                 {loading ? (
                     <div className={styles.loader}>
