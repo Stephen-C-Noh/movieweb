@@ -4,3 +4,7 @@
 .submitBtn a {
     text-decoration: none;
 }
+
+.multiSelect {
+    display: inline-flex;
+}

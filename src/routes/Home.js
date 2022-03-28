@@ -2,14 +2,15 @@ import { useState, useEffect } from "react";
 import Movie from "../components/Movie";
 import Header from "../components/Header";
 import styles from "../css/Home.module.css";
-import RightPane from "../components/RightPane";
 
 function Home() {
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
     const getMovies = async () => {
         const json = await (
-            await fetch(`https://yts.mx/api/v2/list_movies.json?sort_by=rating&limit=50`)
+            await fetch(
+                `https://yts.mx/api/v2/list_movies.json?sort_by=rating&limit=50`
+            )
         ).json();
         setMovies(json.data.movies);
         setLoading(false);
@@ -29,7 +30,6 @@ function Home() {
     return (
         <div>
             <Header />
-            <RightPane />
             <section className={styles.container}>
                 {loading ? (
                     <div className={styles.loader}>
